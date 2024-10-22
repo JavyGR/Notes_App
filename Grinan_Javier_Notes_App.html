@@ -34,6 +34,7 @@
     form>div {
       margin-right: 30px;
     }
+
     form>button {
       width: 150px;
     }
@@ -61,34 +62,16 @@
   <div id="app">
     <form @submit.prevent='addNote'>
       <div class="form-outline" data-mdb-input-init>
-        <input
-          v-model="inputNoteName"
-          type="text"
-          id="formControlLg"
-          class="form-control form-control-lg text-light"
-          required
-        />
+        <input v-model="inputNoteName" type="text" id="formControlLg" class="form-control form-control-lg text-light"
+          required />
         <label class="form-label" for="formControlLg">New Note</label>
       </div>
-      <button
-        type="submit"
-        class="btn btn-light"
-        data-mdb-ripple-init
-        data-mdb-ripple-color="dark"
-      >Add Note</button>
+      <button type="submit" class="btn btn-light" data-mdb-ripple-init data-mdb-ripple-color="dark">Add Note</button>
     </form>
 
     <ul class="list-group list-group-light" v-if="notes.length">
-      <li
-        v-for="note in notes"
-        :key="note.id"
-        class="list-item list-group-item text-light"
-      >
-        <button
-          @click="deleteNote(note.id)"
-          class="btn btn-danger"
-          aria-label="..."
-          data-mdb-ripple-init>
+      <li v-for="note in notes" :key="note.id" class="list-item list-group-item text-light">
+        <button @click="deleteNote(note.id)" class="btn btn-danger" aria-label="..." data-mdb-ripple-init>
           <i class="fa-solid fa-trash"></i>
         </button>
         {{ note.name }}
@@ -97,9 +80,7 @@
   </div>
 
   <!-- MDB -->
-  <script
-    type="text/javascript"
-    src="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/7.3.2/mdb.umd.min.js">
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/7.3.2/mdb.umd.min.js">
   </script>
   <script>
     let app = {
